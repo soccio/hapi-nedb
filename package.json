@@ -19,7 +19,9 @@
   "devDependencies": {
     "code": "^2.1.1",
     "hapi": "^13.3.0",
-    "lab": "^10.3.0"
+    "lab": "^10.3.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.5.2"
   },
   "dependencies": {
     "joi": "^8.0.5",

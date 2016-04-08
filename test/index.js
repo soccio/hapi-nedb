@@ -29,7 +29,7 @@ describe('initialise', () => {
 
     before((done) => {
 
-        Fs.mkdir(NeDbPath, (err) => {
+        Mkdirp(NeDbPath, (err) => {
 
             expect(err).to.not.exist();
             done();
