@@ -1,10 +1,10 @@
 'use strict';
 
 const Code = require('code');
-const Fs = require('fs');
 const Hapi = require('hapi');
 const Lab = require('lab');
 const Path = require('path');
+const Mkdirp = require('mkdirp');
 const NedbPlugin = require('../lib/index');
 const RimRaf = require('rimraf');
 
