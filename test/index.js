@@ -9,6 +9,7 @@ const NedbPlugin = require('../lib/index');
 const RimRaf = require('rimraf');
 
 // Fixtures
+const Fixtures = Path.resolve(__dirname, 'fixtures');
 const NeDbPath = Path.resolve(__dirname, 'fixtures/db');
 
 
@@ -29,7 +30,7 @@ describe('initialise', () => {
 
     before((done) => {
 
-        Mkdirp(NeDbPath, (err) => {
+        Mkdirp(Fixtures, (err) => {
 
             expect(err).to.not.exist();
             done();
@@ -55,7 +56,7 @@ describe('initialise', () => {
 
     after((done) => {
 
-        RimRaf(NeDbPath, (err) => {
+        RimRaf(Fixtures, (err) => {
 
             expect(err).to.not.exist();
             done();
