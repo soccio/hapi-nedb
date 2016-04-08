@@ -1,0 +1,29 @@
+{
+  "name": "hapi-nedb",
+  "version": "1.0.0",
+  "description": "hapi plugin for nedb",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "lab -t 100 -v -a code -L"
+  },
+  "keywords": [
+    "nedb",
+    "hapi",
+    "plugin"
+  ],
+  "author": "simon-p-r <simon.ricaldone@circabs.com>",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "code": "^2.1.1",
+    "hapi": "^13.3.0",
+    "lab": "^10.3.0"
+  },
+  "dependencies": {
+    "joi": "^8.0.5",
+    "nedb": "^1.8.0",
+    "neo-async": "^1.8.0"
+  }
+}
