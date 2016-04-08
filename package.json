@@ -1,6 +1,6 @@
 {
   "name": "hapi-nedb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "hapi plugin for nedb",
   "main": "lib/index.js",
   "directories": {
@@ -14,6 +14,11 @@
     "hapi",
     "plugin"
   ],
+  "homepage": "https://github.com/circabs/hapi-nedb",
+    "repository": {
+    "type": "git",
+    "url": "git@github.com:circabs/hapi-nedb.git"
+  },
   "author": "simon-p-r <simon.ricaldone@circabs.com>",
   "license": "BSD-3-Clause",
   "devDependencies": {
