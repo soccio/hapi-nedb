@@ -147,7 +147,7 @@ describe('initialise', () => {
         });
     });
 
-    it('should load plugin with different options', (done) => {
+    it('should load plugin with mix of collection and global options', (done) => {
 
         const validOpts = {
             collections: {
@@ -189,7 +189,7 @@ describe('initialise', () => {
             },
             directory: NeDbPath,
             timestampData: true,
-            corruptAlertThreshold: '3'
+            corruptAlertThreshold: 0
         };
 
         plugin.options = validOpts;
@@ -210,7 +210,7 @@ describe('initialise', () => {
                 },
                 country: {
                     directory: NeDbPath,
-                    corruptAlertThreshold: '5'
+                    corruptAlertThreshold: 5
                 }
             },
             directory: NeDbPath
