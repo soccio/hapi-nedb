@@ -4,12 +4,12 @@ const Code = require('code');
 const Hapi = require('hapi');
 const Lab = require('lab');
 const Path = require('path');
-const Mkdirp = require('mkdirp');
+// const Mkdirp = require('mkdirp');
 const NedbPlugin = require('../lib/index');
-const RimRaf = require('rimraf');
+// const RimRaf = require('rimraf');
 
 // Fixtures
-const Fixtures = Path.resolve(__dirname, 'fixtures');
+// const Fixtures = Path.resolve(__dirname, 'fixtures');
 const NeDbPath = Path.resolve(__dirname, 'fixtures/db');
 
 
@@ -18,8 +18,8 @@ const lab = exports.lab = Lab.script();
 const describe = lab.describe;
 const it = lab.it;
 const expect = Code.expect;
-const before = lab.before;
-const after = lab.after;
+// const before = lab.before;
+// const after = lab.after;
 const beforeEach = lab.beforeEach;
 
 
@@ -28,14 +28,14 @@ describe('initialise', () => {
     let server;
     let plugin;
 
-    before((done) => {
-
-        Mkdirp(Fixtures, (err) => {
-
-            expect(err).to.not.exist();
-            done();
-        });
-    });
+    // before((done) => {
+    //
+    //     Mkdirp(Fixtures, (err) => {
+    //
+    //         expect(err).to.not.exist();
+    //         done();
+    //     });
+    // });
 
     beforeEach((done) => {
 
@@ -54,15 +54,15 @@ describe('initialise', () => {
     });
 
 
-    after((done) => {
-
-        RimRaf(Fixtures, (err) => {
-
-            expect(err).to.not.exist();
-            done();
-
-        });
-    });
+    // after((done) => {
+    //
+    //     RimRaf(Fixtures, (err) => {
+    //
+    //         expect(err).to.not.exist();
+    //         done();
+    //
+    //     });
+    // });
 
 
     it('should return an error due to no options passed to plugin', (done) => {
