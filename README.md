@@ -34,19 +34,19 @@ Valid options for plugin are below, they can set as same options for each nedb c
 
 const Hapi = require('hapi');
 const Plugin = {
-   register: require('hapi-nedb'),
-   options: {
-       collections: {
-           session: {},
-           user: {}
-       },
-       serializers: {
-           secretKey: 'secret'
-       },
-       directory: '/path/to/store/nedb/files',
-       corruptAlertThreshold: '0',
-       timestampData: true
-   }
+    register: require('hapi-nedb'),
+    options: {
+        collections: {
+            session: {},
+            user: {}
+        },
+        serializers: {
+            secretKey: 'secret'
+        },
+        directory: '/path/to/store/nedb/files',
+        corruptAlertThreshold: '0',
+        timestampData: true
+    }
 };
 
 const server = new Hapi.Server();
@@ -58,50 +58,49 @@ server.connection({
 
 server.route([{
 
-   method: 'POST',
-   path: '/',
-   handler: function (request, reply) {
+    method: 'POST',
+    path: '/',
+    handler: function (request, reply) {
 
-       request.server.app.nedb.session.insert(request.payload, (err, doc) => {
+        request.server.app.nedb.session.insert(request.payload, (err, doc) => {
 
-           if (err) {
-               return reply(err);
-           }
-           return reply(doc);
-       });
-
-   }
+            if (err) {
+                return reply(err);
+            }
+            return reply(doc);
+        });
+    }
 },
 {
 
-   method: 'GET',
-   path: '/',
-   handler: function (request, reply) {
+    method: 'GET',
+    path: '/',
+    handler: function (request, reply) {
 
-       request.server.app.nedb.session.find({}, (err, doc) => {
+        request.server.app.nedb.session.find({}, (err, doc) => {
 
-           if (err) {
-               return reply(err);
-           }
-           return reply(doc);
-       });
+            if (err) {
+                return reply(err);
+            }
+            return reply(doc);
+        });
 
-   }
+    }
 }]);
 
 
 server.register(Plugin, (err) => {
 
-   if (err) {
-       throw err;
-   }
+    if (err) {
+        throw err;
+    }
 
-   server.start((err) => {
+    server.start((err) => {
 
-       if (err) {
-           return console.error(err);
-       }
-       console.log(`Server running on host ${server.info.host} and port number ${server.info.port}`);
-   });
+        if (err) {
+            return console.error(err);
+        }
+        console.log(`Server running on host ${server.info.host} and port number ${server.info.port}`);
+    });
 });
 ```
