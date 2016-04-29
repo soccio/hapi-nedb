@@ -4,6 +4,8 @@ const Code = require('code');
 const Hapi = require('hapi');
 const Lab = require('lab');
 const Path = require('path');
+const MkDir = require('mkdirp');
+const RmDir = require('rimraf');
 const NedbPlugin = require('../lib/index');
 
 // Fixtures
@@ -16,6 +18,7 @@ const describe = lab.describe;
 const it = lab.it;
 const expect = Code.expect;
 const beforeEach = lab.beforeEach;
+const afterEach = lab.afterEach;
 
 
 describe('initialise', () => {
@@ -34,9 +37,25 @@ describe('initialise', () => {
         plugin = {
             register: NedbPlugin,
             options: {}
-        };
 
-        done();
+        };
+        MkDir(NeDbPath, (err) => {
+
+            expect(err).to.not.exist();
+            done();
+        });
+
+    });
+
+    afterEach((done) => {
+
+        server = null;
+        plugin = null;
+        RmDir(NeDbPath, (err) => {
+
+            expect(err).to.not.exist();
+            done();
+        });
 
     });
 
@@ -91,7 +110,12 @@ describe('initialise', () => {
         server.register(plugin, (err) => {
 
             expect(err).to.not.exist();
-            done();
+            server.start((err) => {
+
+                expect(err).to.not.exist();
+                server.stop(done);
+            });
+
         });
     });
 
@@ -120,7 +144,12 @@ describe('initialise', () => {
         server.register(plugin, (err) => {
 
             expect(err).to.not.exist();
-            done();
+
+            server.start((err) => {
+
+                expect(err).to.not.exist();
+                server.stop(done);
+            });
         });
     });
 
@@ -144,7 +173,7 @@ describe('initialise', () => {
                     }
                 };
             },
-            directory: 'test/fixtures/db/testC'
+            directory: 'test/fixtures/db'
         };
 
         plugin.options = validOpts;
@@ -152,7 +181,11 @@ describe('initialise', () => {
         server.register(plugin, (err) => {
 
             expect(err).to.not.exist();
-            done();
+            server.start((err) => {
+
+                expect(err).to.not.exist();
+                server.stop(done);
+            });
         });
     });
 
@@ -174,7 +207,11 @@ describe('initialise', () => {
         server.register(plugin, (err) => {
 
             expect(err).to.not.exist();
-            done();
+            server.start((err) => {
+
+                expect(err).to.not.exist();
+                server.stop(done);
+            });
         });
     });
 
@@ -199,7 +236,11 @@ describe('initialise', () => {
         server.register(plugin, (err) => {
 
             expect(err).to.not.exist();
-            done();
+            server.start((err) => {
+
+                expect(err).to.not.exist();
+                server.stop(done);
+            });
         });
     });
 
