@@ -51,7 +51,7 @@ describe('initialise', () => {
 
         server = null;
         plugin = null;
-        RmDir(NeDbPath, (err) => {
+        RmDir(NeDbPath, { maxBusyTries: 5 },  (err) => {
 
             expect(err).to.not.exist();
             done();
@@ -87,6 +87,7 @@ describe('initialise', () => {
             done();
         });
     });
+
 
 
     it('should load plugin with valid options', (done) => {
