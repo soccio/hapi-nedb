@@ -22,14 +22,14 @@
   "author": "simon-p-r <simon.ricaldone@circabs.com>",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "code": "^4.0.0",
-    "hapi": "^16.1.0",
-    "lab": "^12.1.0",
-    "rimraf": "^2.5.4"
+    "code": "^4.1.0",
+    "hapi": "^16.4.3",
+    "lab": "^14.1.0",
+    "rimraf": "^2.6.1"
   },
   "dependencies": {
-    "joi": "^10.2.0",
+    "joi": "^10.6.0",
     "nedb-core": "^3.0.6",
-    "neo-async": "^2.0.1"
+    "neo-async": "^2.2.2"
   }
 }
