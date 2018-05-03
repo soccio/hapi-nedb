@@ -9,11 +9,7 @@
   "scripts": {
     "test": "lab -t 100 -v -a code -L"
   },
-  "keywords": [
-    "nedb",
-    "hapi",
-    "plugin"
-  ],
+  "keywords": ["nedb", "hapi", "plugin"],
   "homepage": "https://github.com/circabs/hapi-nedb",
   "repository": {
     "type": "git",
@@ -22,14 +18,14 @@
   "author": "simon-p-r <simon.ricaldone@circabs.com>",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "code":"^5.1.2",
-    "hapi": "^16.6.2",
-    "lab": "^15.1.2",
-    "rimraf": "^2.6.1"
+    "code": "^5.2.0",
+    "hapi": "^17.4.0",
+    "lab": "^15.4.1",
+    "rimraf": "^2.6.2"
   },
   "dependencies": {
-    "joi": "^13.0.1",
-    "nedb-core": "^3.0.6",
-    "neo-async": "^2.5.0"
+    "joi": "^13.2.0",
+    "nedb": "^1.8.0",
+    "neo-async": "^2.5.1"
   }
 }
